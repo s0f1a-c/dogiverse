@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Background Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p5>Audio</p5>
+  
+
+    <audio id="audioPlayer">
+        <source src="img/New Recording 19.mp3" type="audio/mp3">
+        <source src="img/New Recording 20.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <audio controls>
+          <source src="img/New Recording 19.mp3" type="audio/mp3">
+          <source src="img/New Recording 20.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      <audio autoplay>
+        <source src="img/New recording 19.mp3" type="audio/mp3">
+      </audio>
+      
+      <audio autoplay>
+        <source src="img/New recording 20.mp3" type="audio/mp3">
+      </audio>
+      
+
+<div class="text">
+
+        <h1 class="transition-text"> DOGIVERSE</h1>
+        <p3 class="transition-text"> this is a website about dogs</p3>
+</div>
+
+
+<!--text for draggable images of dogs-->
+    <div class="image-container">
+
+        <img src="img/dog10.png" alt="dawg" 
+        class="draggable"  style="top:30px; right:100px; rotate:20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog11.png" alt="golden" 
+        class="draggable"  style="bottom:30px; left:100px; rotate:15deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog4.png" alt="bananadog" 
+        class="draggable" style="bottom:350px; right:100px; rotate:-10deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog7.png" alt="dawgg" 
+        class="draggable" style="bottom: 500px; left: 203.073px; rotate: 20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog8.png" alt="cutie" 
+        class="draggable" style="bottom30px; right:200px rotate: 13deg">
+        <id="img" draggable="true">
+      </div>
+
+<!--blue sky main title image-->
+    <div class="background-container1"></div>
+<!-- green grass gif image-->
+    
+
+    <div id="bones">
+        <img src="img/dog5.png" alt class="bone draggable mini-bobbing" 
+        width="200px" style="bottom:220px; left:830px;">
+
+        <h3 class="bobbing-text">
+            give
+            <br> a bone
+            <br> to a dawg
+        </h3>
+        <img src="img/dog9.png" alt class="bone draggable mini-bobbing"
+        width="600px"style="top:100px; left:120px">
+
+        <img src="img/dog12.png" alt class=" draggable bone mini-bobbing"
+        width="600px" style="bottom: 220px; right:830px">
+
+        <img src="img/Snoop-Dogg-Performing-live.jpg" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:560px; right:120px">
+
+        <img src="img/dog3.png" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:560px; left:120px">
+
+
+        <img src="img/dog1.png" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:100px; right:120px">
+    </div>
+
+    <div id="hmm">
+        <img src="img/dog5.png" alt class="shit" 
+        width="200px" style="bottom:220px; left:830px;">
+
+        <h3 class="bobbing-text">
+            give
+            <br> a bone
+            <br> to a dawg
+        </h3>
+
+
+    <div id="shit">
+        <img src="img/dog5.png" alt class="shit" 
+        width="200px" style="bottom:220px; left:830px;">
+
+        <h3 class="bobbing-text">
+            give
+            <br> a bone
+            <br> to a dawg
+        </h3>
+        <img src="img/dog9.png" alt class="bone draggable mini-bobbing"
+        width="600px"style="top:100px; left:120px">
+
+        <img src="img/dog12.png" alt class=" draggable bone mini-bobbing"
+        width="600px" style="bottom: 220px; right:830px">
+
+        <img src="img/Snoop-Dogg-Performing-live.jpg" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:560px; right:120px">
+
+        <img src="img/dog3.png" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:560px; left:120px">
+
+
+        <img src="img/dog1.png" alt class="draggable bone mini-bobbing"
+        width="600px" style="top:100px; right:120px">
+    </div>
+<!-- animated gif of grass-->
+    <div class="parallax">
+         <button onclick="celebrate()">Click me to Celebrate!</button>
+
+    </div>
+
+
+
+<!-- java script for images-->
+<script>
+ const images = document.querySelectorAll('.draggable');
+
+images.forEach(image => {
+  image.addEventListener('dragstart', dragStart);
+  image.addEventListener('dragend', dragEnd);
+});
+
+function dragStart(event) {
+  event.dataTransfer.setData('text', event.target.id);
+}
+
+function dragEnd(event) {
+  event.target.style.transition = 'transform 0.2s ease';
+  event.target.style.transform = 'scale(1)';
+}
+
+document.body.addEventListener('dragover', (event) => {
+  event.preventDefault();
+});
+
+document.body.addEventListener('drop', (event) => {
+  event.preventDefault();
+  
+  const draggedId = event.dataTransfer.getData('text');
+  const draggedImage = document.getElementById(draggedId);
+
+  // Get the position of the drop
+  const dropX = event.clientX - draggedImage.width / 2;
+  const dropY = event.clientY - draggedImage.height / 2;
+
+  draggedImage.style.position = 'absolute';
+  draggedImage.style.left = `${dropX}px`;
+  draggedImage.style.top = `${dropY}px`;
+});
+
+
+function celebrate() {
+    alert("Congrats! 🎉");
+    // Trigger a confetti effect here using a library or custom code
+  }
+
+
+
+    //audio//
+var audio = document.getElementById('audioPlayer');
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+      </script>
+
+</body>
+</html>

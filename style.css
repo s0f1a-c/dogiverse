@@ -1,0 +1,199 @@
+    /* First background container */
+    .background-container1 {
+        height: 1000px; 
+        background-image: url('img/bluesky.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    cursor: url('img/bone.png'), auto;
+    height: 100vh;
+    background-color: rgb(104, 180, 240, 1)
+      
+}
+
+.text{
+    text-align: center;
+    color: rgb(105, 30, 66);
+    border-radius: 0px;
+    font-size: xx-large;
+}
+
+.transition-text{
+    font-size: xx-large;
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition-property: color, font-size;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.transition-text:hover{
+    color: lightblue;
+    font-size: 150%;
+
+}
+
+.bobbing-text{
+    animation: bob 2s infinite ease-in;
+    text-shadow: 2px red -2px black;
+}
+
+.bobbing-text:active{
+    animation: bob 2s infinite ease-out;
+
+}
+
+
+
+/*draggable images*/
+
+  
+.draggable {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    position: absolute; /* Position the images on top of the background */
+    transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
+  }
+  
+ /* Hover animation - Zoom effect */
+.draggable:hover {
+    transform: scale(1.2);  /* Zooms in the image */
+    filter: brightness(1.2); /* Increases brightness */
+  }
+  
+  /* Active click animation - Rotate */
+  .draggable:active {
+    transform: rotate(20deg); /* Rotate when clicked */
+    filter: brightness(1.5); /* Brightens the image on click */
+  }
+
+
+/* Second background container */
+.background-container2 {
+    height: 800px;
+    background-image: url('img/videogamegrass.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Third background container */
+.background-container3 {
+    height: 700px;
+    background-image: url('img/grassani.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* Third background container */
+.background-container4 {
+    height: 700px;
+    background-image: url('img/grassani.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*second page*/
+#bones{
+    position: relative;
+    background-image: url(img/grass.jpg);
+    background-size: cover;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 200%;
+    color: yellow;
+    display: block;
+}
+
+h3{{
+    margin-block-start: 3em;
+    margin-block-end: 3em;
+    margin-inline-start:0px;
+    margin-inline-end:0px;
+    font weight:bold;
+
+}}
+
+.bone{
+    position: absolute;
+    size: 200%;
+}
+
+.mini-bobbing{
+    animation: bob 2s infinite ease-in-out;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bob;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+}
+
+@keyframes bob {
+    0% {
+        /* transform: translateY(0); */
+        /* Start at original position */
+    }
+
+    50% {
+        transform: translateY(-20px);
+        /* Move up */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Move back to the original position */
+    }
+}
+
+.rotate-left-right{
+    animation:rotateLR 5s infinite
+    ease-in-out;
+}
+
+
+
+/*page3*/
+
+#hmm{
+    position: relative;
+    background-image: url(img/caution.png);
+    background-size: cover;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*for animated gif*/
+.parallax {
+    background-image: url('img/grassani.gif');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
