@@ -1,13 +1,4 @@
-    /* First background container */
-    .background-container1 {
-        height: 1000px; 
-        background-image: url('img/bluesky.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
 /* General styles */
 body {
@@ -15,24 +6,35 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     cursor: url('img/bone.png'), auto;
-    height: 100vh;
+    height: 50vh;
     background-color: rgb(104, 180, 240, 1)
-      
 }
+
+h1{
+    font-size: xx-large;
+    justify-content: center;
+}
+
+p3{
+    font-size: xx-small;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .text{
     text-align: center;
     color: rgb(105, 30, 66);
     border-radius: 0px;
-    font-size: xx-large;
+    justify-content: flex-start;
 }
 
 .transition-text{
-    font-size: xx-large;
     color: blue;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition-property: color, font-size;
     transition-duration: 0.5s;
+    text-align: baseline;
     transition-timing-function: ease;
     transition-delay: 0s;
 }
@@ -40,29 +42,44 @@ body {
 .transition-text:hover{
     color: lightblue;
     font-size: 150%;
-
-}
-
-.bobbing-text{
-    animation: bob 2s infinite ease-in;
-    text-shadow: 2px red -2px black;
-}
-
-.bobbing-text:active{
-    animation: bob 2s infinite ease-out;
-
 }
 
 
+/*background images*/
+
+.background-container1 {
+    height: 1000px; 
+    background-image: url('img/bluesky.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+z-index:2 ;
+    align-items: center;
+}
+
+.background-container2 {
+height: 1000px; 
+position: relative;
+z-index:2;
+background-image: url('img/grasspng.png');
+background-size: cover;
+background-position: center;
+display: flex;
+
+color: yellow;
+justify-content: center;
+align-items: center;
+}
 
 /*draggable images*/
-
-  
 .draggable {
     width: 150px;
     height: auto;
     cursor: pointer;
     position: absolute; /* Position the images on top of the background */
+
     transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
   }
   
@@ -78,59 +95,34 @@ body {
     filter: brightness(1.5); /* Brightens the image on click */
   }
 
-
-/* Second background container */
-.background-container2 {
-    height: 800px;
-    background-image: url('img/videogamegrass.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Third background container */
-.background-container3 {
-    height: 700px;
-    background-image: url('img/grassani.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* Third background container */
-.background-container4 {
-    height: 700px;
-    background-image: url('img/grassani.gif');
-    background-size: cover;
-    background-position: center;
-}
-
-
-/*second page*/
-#bones{
+  #bones{
     position: relative;
     background-image: url(img/grass.jpg);
     background-size: cover;
     height: 1200px;
+    color: yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-h3{
+h2{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    font-size: 200%;
+    justify-content: right;
+    font-size: xx-large;
     color: yellow;
     display: block;
 }
 
-h3{{
-    margin-block-start: 3em;
-    margin-block-end: 3em;
-    margin-inline-start:0px;
-    margin-inline-end:0px;
-    font weight:bold;
+.bobbing-text{
+    animation: bob 2s infinite ease-in;
+    text-shadow: 2px red -2px black;
+}
 
-}}
+.bobbing-text:active{
+    animation: bob 2s infinite ease-out;
+}
+
 
 .bone{
     position: absolute;
@@ -138,8 +130,8 @@ h3{{
 }
 
 .mini-bobbing{
-    animation: bob 2s infinite ease-in-out;
-    animation-duration: 2s;
+    animation: bob 5s infinite ease-in-out;
+    animation-duration: 5s;
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: infinite;
@@ -169,31 +161,51 @@ h3{{
     }
 }
 
-.rotate-left-right{
-    animation:rotateLR 5s infinite
-    ease-in-out;
+/*.rotate-left-right{
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
+@keyframes rotate{
+    0%, 100%{
+        transform: rotateX('0deg');
+    }
+50%{
+    transform: rotateX('180');
+}
+
+}*/
 
 
-/*page3*/
+/*cautionpage*/
 
-#hmm{
-    position: relative;
-    background-image: url(img/caution.png);
+#idk{
+    position: relative; 
     background-size: cover;
-    height: 1200px;
     display: flex;
+    background-image: url(img/AdobeStock_tape.png);
     flex-direction: column;
     justify-content: center;
+    object-fit: contain;
+}
+#hmm{
+    position: relative;
+    background-image: url(img/AdobeStock_sign.jpeg);
+    background-size: cover;
+    object-fit: contain;
+    display: flex;
+    height: 120vh;
+    width: 180vh;
+    flex-direction: column;
+
+    
 }
 
-/*for animated gif*/
-.parallax {
-    background-image: url('img/grassani.gif');
-    height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
+button{
+    font-size: medium;
+    color: brown;
+    border: rosybrown;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Background Images</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+</head>
+<body>
+ 
+
+<div class="text background-container1">
+
+        <h1 class="transition-text"> DOGIVERSE</h1>
+</div>
+
+<!--text for draggable images of dogs
+<div class="background-container1 transition-text">
+    <div h1 id="main-title">DOGIVERSE </div>
+    <div p3 id="subtext"><br>this is a website about dogs</div>
+</div>-->
+
+<p3 class="transition-text"> this is a website about dogs</p3>
+
+<!--1st >grass-->
+<div class="background-container2">
+
+        <img src="img/dog10.png" alt="dawg" 
+        class="draggable"  
+        style="top:40px; right:400px; rotate:20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog11.png" alt="golden" 
+        class="draggable"  
+        style="top:40px; left:100px; rotate:15deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog4.png" alt="bananadog" 
+        class="draggable" 
+        style="top:400px; left:100px; rotate:-10deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog7.png" alt="dawgg" 
+        class="draggable" 
+        style="top:40px; left:700px; rotate: 20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog8.png" alt="cutie" 
+        class="draggable" 
+        style="top:40px; left:700px rotate: 13deg">
+        <id="img" draggable="true">
+
+        <img src="img/dog9.png" alt="dawg" 
+        class="draggable"  
+        style="top:80px; right:100px; rotate:20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog12.png" alt="golden" 
+        class="draggable"  
+        style="top:90px; right:100px; rotate:15deg;">
+        <id="img" draggable="true">
+
+        <img src="img/Snoop-Dogg-Performing-live.jpg" alt="Snoop-Dogg-Performing-live" 
+        class="draggable" 
+        style="top:700px; left:100px; rotate:-10deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog3.png" alt="dawg" 
+        class="draggable" 
+        style="top:400px; right:400px; rotate: 20deg;">
+        <id="img" draggable="true">
+
+        <img src="img/dog1.png" alt="cutiep" 
+        class="draggable" 
+        style="top:400px; left:700px rotate: 13deg">
+        <id="img" draggable="true">
+      </div>
+
+
+<!-- 2nd grass-->
+<div id="bones">
+    <img src="img/dog5.png" alt class="bone draggable mini-bobbing" 
+    width="200px" style="bottom:220px; left:200px;">
+
+    <h2 class="bobbing-text">
+        give
+        <br> a dawg
+        <br> a bone
+    </h2>
+    <img src="img/dog9.png" alt class="bone draggable mini-bobbing"
+    width="600px"style="top:100px; left:120px">
+
+    <img src="img/dog12.png" alt class=" draggable bone mini-bobbing"
+    width="600px" style="bottom: 500px; right:830px">
+
+    <img src="img/Snoop-Dogg-Performing-live.jpg" alt class="draggable bone mini-bobbing"
+    width="600px" style="top:900px; right:200px">
+
+    <img src="img/dog3.png" alt class="draggable bone mini-bobbing"
+    width="600px" style="top:500px; left:120px">
+
+
+    <img src="img/dog1.png" alt class="draggable bone mini-bobbing"
+    width="600px" style="top:300px; right:200px">
+</div>
+<div>
+    <div id="idk"><img src="img/AdobeStock_tape.png"></div>
+    <div id="hmm">
+        <h2> dogs <br> shitting <br>ahead</h2></div>
+    <div id="idk"><img src="img/AdobeStock_tape.png"></div>
+    </div>
+
+
+<!-- page 3 caution tape
+    <div id="idk">
+        <img src="img/AdobeStock_tape.png">
+    </div>
+
+    <div id="hmm">
+        <img src="img/AdobeStock_sign.jpeg">
+
+       <h2 class="bobbing-text"> dogs
+            <br> shitting
+            <br> ahead</h2>
+   
+
+    <div id="idk">
+        <img src="img/AdobeStock_tape.png">
+    </div>-->
+      
+  <!--  <div id="idk">
+        <img src="img/AdobeStock_tape.png">
+    </div>-->
+
+
+<!-- celebrate button 
+         <button onclick="celebrate()">Click me to Celebrate!</button>-->
+
+
+<!-- audio-->
+
+<h1>Multiple Audio Players</h1>
+    
+<!-- Audio 1 -->
+        <audio class="audio-player" autoplay muted>
+            <source src="img/New Recording 19.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    
+<!-- Audio 2 -->
+        <audio class="audio-player" autoplay muted>
+            <source src="img/New Recording 20.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    
+<!-- Audio 3 -->
+        <audio class="audio-player" autoplay>
+            <source src="audio3.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    
+<!-- Mute/Unmute Button -->
+        <button onclick="toggleMute()">Mute/Unmute All</button>
+    
+
+<!-- java script for images-->
+ <script>
+        $(document).ready(function() {
+            $(".draggable").draggable({ stack: ".draggable" });
+        });
+
+function celebrate() {
+    alert("Congrats! 🎉");
+    // Trigger a confetti effect here using a library or custom code
+  }
+
+// Function to toggle mute/unmute for all audio elements with the class 'audio-player'
+    function toggleMute() {
+                // Get all audio elements with the class 'audio-player'
+                const audioElements = document.querySelectorAll('.audio-player');
+                
+                // Loop through each audio element and toggle its mute state
+                audioElements.forEach(audio => {
+                    audio.muted = !audio.muted;
+                });
+            }
+      </script>
+
+</body>
+</html>
+
+
+
