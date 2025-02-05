@@ -5,11 +5,26 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    cursor: url('img/bone.png'), auto;
+    cursor: url('bone.cur')10 10, pointer !important;
     height: 50vh;
     background-color: rgb(104, 180, 240, 1)
 }
 
+    /* font */
+@font-face {
+    font-family: 'dog';
+    src: url('img/Dogways.ttf') format('truetype'),
+         url('img/Dogways.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the custom font */
+body {
+    font-family: 'MyCustomFont', sans-serif;
+}
+
+}
 h1{
     font-size: xx-large;
     justify-content: center;
@@ -21,6 +36,12 @@ p3{
     align-items: center;
 }
 
+.open-text{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: xx-small;
+
+    }
 
 .text{
     text-align: center;
@@ -31,13 +52,15 @@ p3{
 
 .transition-text{
     color: blue;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    transition-property: color, font-size;
+    font-family:dog;
+    transition-property: color;
+    font-size: xx-large;
     transition-duration: 0.5s;
     text-align: baseline;
     transition-timing-function: ease;
     transition-delay: 0s;
 }
+
 
 .transition-text:hover{
     color: lightblue;
@@ -49,6 +72,7 @@ p3{
 
 .background-container1 {
     height: 1000px; 
+    font-family:dog;
     background-image: url('img/bluesky.jpg');
     background-size: cover;
     background-position: center;
@@ -67,33 +91,45 @@ background-image: url('img/grasspng.png');
 background-size: cover;
 background-position: center;
 display: flex;
-
 color: yellow;
 justify-content: center;
 align-items: center;
 }
 
-/*draggable images*/
-.draggable {
-    width: 150px;
-    height: auto;
-    cursor: pointer;
-    position: absolute; /* Position the images on top of the background */
+#gifpoop{
+  flex-direction: column;  
+  height: fit-content;
+  justify-content: space-between;
+  background-repeat: repeat-x;
+  background-position: top;
+}
 
-    transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
-  }
-  
- /* Hover animation - Zoom effect */
-.draggable:hover {
-    transform: scale(1.2);  /* Zooms in the image */
-    filter: brightness(1.2); /* Increases brightness */
-  }
-  
-  /* Active click animation - Rotate */
-  .draggable:active {
-    transform: rotate(20deg); /* Rotate when clicked */
-    filter: brightness(1.5); /* Brightens the image on click */
-  }
+.background-container3 {
+    height: 1000px; 
+    position: relative;
+    z-index:2;
+    background-image: url('img/AdobeStock_dirt.jpeg');
+    background-size: cover;
+    background-position: center;
+    cursor: url('img/bone.png') 12 12, auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.comic-strip {
+        height: 1000px; 
+        position: relative;
+        z-index:2;
+        background-image: url('img/dog\ comic\ 1.png.');
+        background-size: cover;
+        background-position: center;
+        cursor: url('img/bone.png') 12 12, auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
 
   #bones{
     position: relative;
@@ -119,6 +155,11 @@ h2{
     text-shadow: 2px red -2px black;
 }
 
+.comic{
+    position: center;
+    text-align: center;
+
+}
 .bobbing-text:active{
     animation: bob 2s infinite ease-out;
 }
@@ -129,9 +170,33 @@ h2{
     size: 200%;
 }
 
+
+/*draggable images*/
+.draggable {
+    cursor: url('bone.cur')10 10, pointer;
+    width: 150px;
+    height: auto;
+    position: absolute; /* Position the images on top of the background */
+    transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
+  }
+  
+ /* Hover animation - Zoom effect */
+.draggable:hover {
+    transform: scale(1.2);  /* Zooms in the image */
+    filter: brightness(1.2); /* Increases brightness */
+  }
+  
+  /* Active click animation - Rotate */
+  .draggable:active {
+    transform: rotate(20deg); /* Rotate when clicked */
+    filter: brightness(1.5); /* Brightens the image on click */
+  }
+
+/*slow bobbing*/
+
 .mini-bobbing{
     animation: bob 5s infinite ease-in-out;
-    animation-duration: 5s;
+    animation-duration: 7s;
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: infinite;
@@ -158,6 +223,41 @@ h2{
     100% {
         transform: translateY(0);
         /* Move back to the original position */
+    }
+}
+
+/* fadein*/
+.fade{
+    animation-name: fadeinout;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeinout{
+    0%, 100%{
+        opacity: 0;
+    }
+60%{
+        opacity: 1;
+    }
+}
+
+/*scale*/
+.scale{
+    animation-name: scaleupdown;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scaleupdown{
+    0%, 100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(2);
     }
 }
 
@@ -192,20 +292,68 @@ h2{
 }
 #hmm{
     position: relative;
-    background-image: url(img/AdobeStock_sign.jpeg);
+    background-image: url(img/CAUTION2.png);
     background-size: cover;
     object-fit: contain;
     display: flex;
     height: 120vh;
     width: 180vh;
-    flex-direction: column;
-
-    
+    flex-direction: column;  
 }
 
 
 button{
-    font-size: medium;
-    color: brown;
+    font-size: x-small;
+    color: rgba(180, 214, 250, 0.7);
     border: rosybrown;
+    font-family: dog;
+    width: 20px;
 }
+
+    .audio-player-container {
+        text-align: center;
+        margin-top: 20px;
+        position: sticky;  /* This allows it to move with scroll */
+        bottom: 20px;  /* This tells it to stick at the bottom when it reaches that point */
+        left: 2%;  /* Center it horizontally */
+        transform: translateX(-10%);  /* Center it perfectly */
+        z-index: 1000;  /* Ensure it stays on top of other content */
+        background: rgba(180, 214, 250, 0.7);  /* Optional: Add a background for better visibility */
+        padding: 5px;
+        border-radius: 10px;  /* Optional: Make it look rounded */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;  /* Optional: Set a width for the controls */
+    }
+  
+    
+    .controls {
+        margin-top: 10px;
+    }
+
+    .controls button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    audio {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .underconstruction{
+        position: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+        font-size: medium;
+        padding: 100px;
+
+    }
+
+    .gifimages{
+        display: flex;
+        justify-content: space-evenly;
+    }
